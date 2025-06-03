@@ -6,6 +6,8 @@ import CrearCita from '../components/CrearCita/CrearCita';
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from '../redux/authSlice';
 import { Role } from '../services/IAuthService';
+import { IntlProvider } from 'react-intl';
+import messages from '../language/es.json';
 
 vi.mock('firebase/database', () => ({
   getDatabase: vi.fn(),
@@ -37,7 +39,10 @@ describe('CrearCita', () => {
       render(
         <Provider store={store}>
           <MemoryRouter>
-            <CrearCita />
+            <IntlProvider locale="es" messages={messages}>
+              <CrearCita />
+            </IntlProvider>
+            
           </MemoryRouter>
         </Provider>
       );

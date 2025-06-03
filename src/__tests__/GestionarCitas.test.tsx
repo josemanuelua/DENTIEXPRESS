@@ -5,6 +5,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { BrowserRouter } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 import { describe, it, expect } from 'vitest';
+
 // Define mensajes para español e inglés, mínimo con el id que usarás
 const messagesSpanish = {
   'app.gestionarCitas.noCitas': 'No tienes citas registradas.',

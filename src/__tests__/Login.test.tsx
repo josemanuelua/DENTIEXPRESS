@@ -5,7 +5,9 @@ import Login from '../components/Login/Login';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
+import { IntlProvider } from 'react-intl';
 
+import messages from '../language/es.json';
 // Mock del authService
 vi.mock('../services/AuthService', () => ({
   authService: {
@@ -22,7 +24,9 @@ const renderLogin = () => {
   return render(
     <Provider store={store}>
       <BrowserRouter>
-        <Login />
+        <IntlProvider locale="es" messages={messages}>
+          <Login />
+        </IntlProvider>
       </BrowserRouter>
     </Provider>
   );
@@ -35,7 +39,7 @@ describe('Login', () => {
 
   it('renderiza el formulario', () => {
     renderLogin();
-    expect(screen.getByText('Iniciar sesión')).toBeInTheDocument();
+    expect(screen.getByText(/Iniciar sesión/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Contraseña/i)).toBeInTheDocument();
   });
