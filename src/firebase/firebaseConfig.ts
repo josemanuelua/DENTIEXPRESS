@@ -3,7 +3,7 @@ import { getDatabase } from "firebase/database";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAhODf-WrCxvpeAJ4WREuqAoNbgbC3VSHA",
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
     authDomain: "dentiexpress-13f08.firebaseapp.com",
     databaseURL: "https://dentiexpress-13f08-default-rtdb.firebaseio.com",
     projectId: "dentiexpress-13f08",
