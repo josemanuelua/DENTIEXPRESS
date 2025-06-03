@@ -1,0 +1,73 @@
+import { Link } from "react-router-dom";
+import { userService } from "../../services/UserService";
+import { useEffect, useState } from "react";
+
+interface Cita {
+    id: string;
+    uid: string;
+    name: string;
+    lastname: string;
+    medico: string;
+    tratamiento: string;
+    fecha: string;
+}
+
+const Admin: React.FC = () => {
+    const [citas, setCitas] = useState<Cita[]>([]);
+    useEffect(() => {
+        const obtenerCitas = async () => {
+            try {
+                const citasData = await userService.getAllCitas();
+                console.log(citasData);
+                if (citasData) {
+                    setCitas(citasData);
+                    if(citas){
+                        console.log("Citas recuperadas correctamente admin" + citas);
+                    }
+                   
+                }
+
+            } catch (error) {
+                console.error("Hubo un error al obtener las citas");
+            }
+        }
+        obtenerCitas();
+    }, []);
+
+    const handleDelete = async (citaId: string) => {
+        try {
+            const success = await userService.deleteCita(citaId);
+            if (success) {
+                setCitas(citas.filter((cita) => cita.id != citaId));
+                console.log("Cita eliminada correctamente")
+            }
+        } catch (error) {
+            console.error("Hubo algun error al eliminar la cita");
+        }
+    }
+
+    return (
+        <div>
+            <p>Panel de Administracion</p>
+            <Link to="/modificarCita">Modificar Cita</Link>
+            <h2>Citas de usuarios</h2>
+            {citas.length>0 ? (
+                 <ul>
+                 {citas.map((cita) => (
+                     <li key={cita.id}>
+                         {cita.id} - {cita.name} - {cita.medico} - {cita.tratamiento}
+                         <button onClick={() => handleDelete(cita.id)}>Eliminar cita</button>
+                     </li>
+                 ))}
+             </ul>
+            ):(
+                <p> no existen citas en la base de datos</p>
+            )}
+           
+
+        </div>
+
+    );
+};
+
+export default Admin;
