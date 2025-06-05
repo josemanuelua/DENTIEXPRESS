@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { authService } from '../../services/AuthService';
 import { setUser, setRoles } from '../../redux/authSlice';
 import { userService } from '../../services/UserService'; 
+import { useNavigate } from 'react-router-dom';
 
 interface AuthListenerProps {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ interface AuthListenerProps {
 
 const AuthListener: React.FC<AuthListenerProps> = ({ children }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [loading, setLoading] = React.useState(true);
   useEffect(() => {
     //authService.signOut();
@@ -36,7 +38,7 @@ const AuthListener: React.FC<AuthListenerProps> = ({ children }) => {
               lastname: userData.lastname
             }));
           }
-
+          navigate('/');
           dispatch(setRoles(userRoles));
         } catch (error) {
           console.error('Error al obtener los roles o datos del usuario:', error);

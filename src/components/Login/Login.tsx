@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { authService } from '../../services/AuthService';
 import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import { FormattedMessage, useIntl } from "react-intl";
@@ -9,7 +9,7 @@ const Login: React.FC = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState<string>('');
-    const navigate = useNavigate();
+
     const intl = useIntl();
     const placeholderEmail = intl.formatMessage({ id: "app.login.emailPlaceholder" }); 
     const placeholderPassword = intl.formatMessage({ id: "app.login.passwordPlaceholder" }); 
@@ -20,8 +20,8 @@ const Login: React.FC = () => {
         
         try {
             const userCredential = await authService.signIn(email, password);
-            console.log("Usuario autenticado:", userCredential.user);
-            navigate('/');
+            console.log("Usuario autenticado login:", userCredential.user);
+            //navigate('/');
         } catch (error: any) {
             console.error("Error al iniciar sesión:", error);
             setError("Credenciales inválidas");

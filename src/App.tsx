@@ -30,6 +30,7 @@ const AppContent = () => {
   return (
     <IntlProvider locale={locale} messages={messages}>
       <Router>
+      <AuthListener>
         <Navbar />
         <div className="main-content">
           <Routes>
@@ -49,6 +50,7 @@ const AppContent = () => {
             </Route>   
           </Routes>
         </div>
+        </AuthListener>
       </Router>
     </IntlProvider>
   );
@@ -58,9 +60,9 @@ function App() {
   return (
     <LanguageProvider>
       <Provider store={store}>
-        <AuthListener>
+        
           <AppContent /> {/* Se asegura de que `useContext(LanguageContext)` tenga acceso a `Provider` */}
-        </AuthListener>
+        
       </Provider>
     </LanguageProvider>
   );
