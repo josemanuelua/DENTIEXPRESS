@@ -33,7 +33,12 @@ const Navbar: React.FC = () => {
   return (
     <BootstrapNavbar bg="dark" variant="dark" expand="lg" sticky="top">
       <Container fluid>
-        <BootstrapNavbar.Brand as={Link} to="/">MiApp</BootstrapNavbar.Brand>
+        <BootstrapNavbar.Brand as={Link} to="/"><img
+    src={`${import.meta.env.VITE_APP_BASE_URL}assets/logo.png`}
+    alt="Logo"
+    height="60"
+    className="d-inline-block align-top"
+  /></BootstrapNavbar.Brand>
         <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" className="p-0" />
         <BootstrapNavbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
