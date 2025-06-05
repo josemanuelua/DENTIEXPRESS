@@ -59,6 +59,7 @@
     "app.perfil.mensajeErrorEliminar": "Hubo un error al eliminar la cita",
     "app.perfil.mensajeErrorCargar": "Hubo un error al cargar las citas",
     "app.perfil.noCitas": "No tienes citas registradas",
+    "app.perfil.cargandoCitas": "Cargando citas",
     "app.crearCita.paciente": "Paciente",
     "app.crearCita.medico": "Médico",
     "app.crearCita.placeholderMedico": "Seleccione un médico",

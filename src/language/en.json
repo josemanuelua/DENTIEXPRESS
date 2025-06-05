@@ -60,6 +60,7 @@
     "app.perfil.mensajeErrorEliminar": "There was an error deleting the appointment",
     "app.perfil.mensajeErrorCargar": "There was an error loading the appointments",
     "app.perfil.noCitas": "You have no registered appointments",
+    "app.perfil.cargandoCitas": "loading appointments",
     "app.crearCita.paciente": "Patient",
     "app.crearCita.medico": "Doctor",
     "app.crearCita.placeholderMedico": "Select a doctor",
