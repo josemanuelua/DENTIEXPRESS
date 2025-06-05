@@ -180,6 +180,18 @@ export class FirebaseDatabaseService implements IUserDatabaseService {
             return false;
         }
     }
+    async deleteUsuario(idUsuario:string):Promise<boolean>{
+        const db= getDatabase(app);
+        const medicoRef = ref(db, `users/${idUsuario}`);
+        try{
+            await remove(medicoRef);
+            console.log(`Cita ${idUsuario} eliminada correctamente`);
+            return true;
+        }catch(error){
+            console.log("Error eliminado el usuario: " +error);
+            return false;
+        }
+    }
 
     async getAllUsuarios():Promise<User[] | null>{
         const db = getDatabase(app);

@@ -58,6 +58,9 @@ export class FirebaseUserService implements IUserService {
         return this.databaseService.deleteMedico(idMedico);
     }
 
+    async deleteUsuario(idUsuario:string):Promise<boolean>{
+        return this.databaseService.deleteUsuario(idUsuario);
+    }
     async getAllUsuarios(): Promise<User[] | null>{
         return this.databaseService.getAllUsuarios();
     }

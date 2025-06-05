@@ -1,6 +1,12 @@
 {
-    "app.home.label.title": "DentiExpross",
+    "app.home.label.title": "to DentiExpress Dental Clinic",
     "app.home.label.welcome": "Welcome",
+    "app.home.label.implantologia": "Implantology",
+    "app.home.text.implantologia": "Replacement of missing teeth using titanium implants integrated into the bone.",
+    "app.home.label.ortodoncia": "Orthodontics",
+    "app.home.text.ortodoncia": "Correction of teeth alignment and bite using braces or invisible aligners.",
+    "app.home.label.periodoncia": "Periodontics",
+    "app.home.text.periodoncia": "Treatment of gums and the bone supporting teeth, preventing diseases such as gingivitis.",
     "app.navbar.idioma": "Language",
     "app.navbar.idioma.spanish": "Spanish",
     "app.navbar.idioma.english": "English",
@@ -28,6 +34,7 @@
     "app.registro.nombrePlaceholder": "Enter your first name",
     "app.admin.gestionarCitas": "Manage Appointments",
     "app.admin.menu": "Menu",
+    "app.admin.gestionarusuarios": "Manage users",
     "app.dashboard.bienvenido": "Welcome to the Admin Panel",
     "app.dashboard.descripcion": "From here you can manage the clinic completely through the different sidebar options",
     "app.gestionarCitas.seleccionar": "Select a user",
@@ -70,7 +77,16 @@
     "app.crearCita.crearCita": "Create Appointment",
     "app.crearCita.reserva": "Book Appointment",
     "app.crearCita.mensajeExito": "Appointment created successfully",
-    "app.crearCita.mensajeError": "Error creating the appointment. Please try again"
+    "app.crearCita.mensajeError": "Error creating the appointment. Please try again",
+    "app.usuariosAdmin.mensajeError": "Error loading users",
+    "app.usuariosAdmin.mensajeEliminar": "Are you sure you want to delete this user?",
+    "app.usuariosAdmin.mensajeEliminarError": "Could not delete the user. Please try again later.",
+    "app.usuariosAdmin.placeholderBusqueda": "Search user...",
+    "app.usuariosAdmin.alertaCargando": "Loading users...",
+    "app.usuariosAdmin.alertaError": "Error loading users",
+    "app.usuariosAdmin.alertaSinResultados": "No users match the search.",
+    "app.usuariosAdmin.btnEliminar": "Delete",
+    "app.usuariosAdmin.title": "User's management"
 
 
 

@@ -13,7 +13,7 @@ describe('Home', () => {
         <Home />
       </IntlProvider>
     );
-    expect(screen.getByText('Bienvenidos')).toBeInTheDocument();
+    expect(screen.getByText(/Bienvenidos/i)).toBeInTheDocument();
   });
 
   it('muestra mensaje de bienvenida en inglés', () => {
@@ -22,6 +22,6 @@ describe('Home', () => {
         <Home />
       </IntlProvider>
     );
-    expect(screen.getByText('Welcome')).toBeInTheDocument();
+    expect(screen.getByText(/Welcome/i)).toBeInTheDocument();
   });
 });
